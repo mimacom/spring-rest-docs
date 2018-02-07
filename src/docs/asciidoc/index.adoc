@@ -39,3 +39,7 @@ include::{snippets}/shouldGetOneCustomer/path-parameters.adoc[]
 include::{snippets}/shouldGetOneCustomer/response-fields.adoc[]
 .Ejemplo de respuesta
 include::{snippets}/shouldGetOneCustomer/response-body.adoc[]
+
+= Documentación auto generada
+
+include::{snippets}/customers-controller-test/test-create-one-customer/auto-section.adoc[]
