@@ -1,0 +1,51 @@
+= Getting started with Spring REST Docs
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toc-title: Index
+:toclevels: 4
+:sectlinks:
+
+This is the documentation of the resource Customers API.
+
+== POST /customers
+
+.Request sample with curl
+include::{snippets}/create-customer/curl-request.adoc[]
+.HTTP response
+include::{snippets}/create-customer/http-response.adoc[]
+.Response sample
+include::{snippets}/create-customer/response-body.adoc[]
+.Input fields
+include::{snippets}/create-customer/request-fields.adoc[]
+.Output fields
+include::{snippets}/create-customer/response-fields.adoc[]
+.Path parameters
+include::{snippets}/create-customer/path-parameters.adoc[]
+
+== GET /customers
+
+.Request sample with curl
+include::{snippets}/find-all/curl-request.adoc[]
+.HTTP response
+include::{snippets}/find-all/http-response.adoc[]
+.Response sample
+include::{snippets}/find-all/response-body.adoc[]
+.Request parameters
+include::{snippets}/find-all/request-parameters.adoc[]
+.Output fields
+include::{snippets}/find-all/response-fields.adoc[]
+
+== GET /customers/{customerId}
+
+.Request sample with curl
+include::{snippets}/get-customer/curl-request.adoc[]
+.HTTP response
+include::{snippets}/get-customer/http-response.adoc[]
+.Response sample
+include::{snippets}/get-customer/response-body.adoc[]
+.Path parameters
+include::{snippets}/get-customer/path-parameters.adoc[]
+.Output fields
+include::{snippets}/get-customer/response-fields.adoc[]
