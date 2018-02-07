@@ -11,6 +11,8 @@
 
 Documentación de la API Customers generada con Spring REST Docs a partir de tests unitarios.
 
+=== POST /customers
+
 .Ejemplo de petición con curl
 include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
 .Respuesta HTTP
@@ -23,3 +25,17 @@ include::{snippets}/shouldCreateCustomer/request-body.adoc[]
 include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
 .Ejemplo de respuesta
 include::{snippets}/shouldCreateCustomer/response-body.adoc[]
+
+=== GET /customer/{customerId}
+
+
+.Ejemplo de petición con curl
+include::{snippets}/shouldGetOneCustomer/curl-request.adoc[]
+.Respuesta HTTP
+include::{snippets}/shouldGetOneCustomer/http-response.adoc[]
+.Parámetros de la petición
+include::{snippets}/shouldGetOneCustomer/path-parameters.adoc[]
+.Campos de salida
+include::{snippets}/shouldGetOneCustomer/response-fields.adoc[]
+.Ejemplo de respuesta
+include::{snippets}/shouldGetOneCustomer/response-body.adoc[]
