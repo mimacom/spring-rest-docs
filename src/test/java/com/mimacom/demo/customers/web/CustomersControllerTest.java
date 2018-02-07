@@ -20,10 +20,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -79,6 +81,18 @@ public class CustomersControllerTest {
                 responseFields(customerDescriptor)));
 
 
+    }
+
+    @Test
+    public void testGetOneCustomer() throws Exception {
+
+        Customer mockCustomer = new Customer();
+        mockCustomer.setId(34L);
+        when(this.customersRepository.findOne(34L)).thenReturn(mockCustomer);
+
+        this.mockMvc.perform(get("/customers/34"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(34));
     }
 
     private FieldDescriptor[] getCustomerFieldDescriptor() {
