@@ -29,12 +29,16 @@ repositories {
     mavenCentral()
 }
 
-ext['spring-restdocs.version'] = '2.0.0.RELEASE'
-
+configurations {
+    jsondoclet
+}
 
 ext {
     snippetsDir = file('build/generated-snippets')
+    javadocJsonDir = file("$buildDir/generated-javadoc-json")
 }
+
+ext['spring-restdocs.version'] = '2.0.0.RELEASE'
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
@@ -42,19 +46,39 @@ dependencies {
     compile('com.h2database:h2:1.4.196')
     asciidoctor ('org.springframework.restdocs:spring-restdocs-asciidoctor:2.0.0.RELEASE')
     testCompile ('org.springframework.restdocs:spring-restdocs-mockmvc:2.0.0.RELEASE')
+    testCompile group: 'capital.scalable', name: 'spring-auto-restdocs-core', version: '1.0.10'
+    jsondoclet group: 'capital.scalable', name: 'spring-auto-restdocs-json-doclet', version: '1.0.10'
     runtime('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
-}
-
-test {
-    outputs.dir snippetsDir
 }
 
 asciidoctor {
     inputs.dir snippetsDir
     dependsOn test
 }
+
+task jsonDoclet(type: Javadoc, dependsOn: compileJava) {
+    source = sourceSets.main.allJava
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = javadocJsonDir
+    options.docletpath = configurations.jsondoclet.files.asType(List)
+    options.doclet = 'capital.scalable.restdocs.jsondoclet.ExtractDocumentationAsJsonDoclet'
+    options.memberLevel = JavadocMemberLevel.PACKAGE
+
+    snippetsDir = file('build/generated-snippets')
+
+}
+
+test {
+    outputs.dir snippetsDir
+
+    systemProperty 'org.springframework.restdocs.outputDir', snippetsDir
+    systemProperty 'org.springframework.restdocs.javadocJsonDir', javadocJsonDir
+
+    dependsOn jsonDoclet
+}
+
 
 jar {
     dependsOn asciidoctor
