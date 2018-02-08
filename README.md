@@ -1,4 +1,4 @@
-#Spring REST Docs sample project
+# Spring REST Docs sample project
 
 Generate API Documentation with Spring REST Docs by running:
 
