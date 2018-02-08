@@ -85,7 +85,6 @@
                             <backend>html</backend>
                             <doctype>book</doctype>
                             <sourceHighlighter>highlightjs</sourceHighlighter>
-                            <!--<sourceDirectory>src/docs/asciidoc</sourceDirectory>-->
                             <attributes>
                                 <snippets>${project.build.directory}/generated-snippets</snippets>
                             </attributes>

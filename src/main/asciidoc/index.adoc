@@ -48,3 +48,6 @@ include::{snippets}/shouldGetOneCustomer/response-fields.adoc[]
 = Documentación auto generada
 
 include::{snippets}/customers-controller-test/test-create-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-get-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-update/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-find-all/auto-section.adoc[]
