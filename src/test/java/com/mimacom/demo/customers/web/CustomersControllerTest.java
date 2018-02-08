@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.JUnitRestDocumentation;
+import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,6 +26,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -80,7 +83,6 @@ public class CustomersControllerTest {
                 requestFields(customerDescriptor),
                 responseFields(customerDescriptor)));
 
-
     }
 
     @Test
@@ -90,9 +92,14 @@ public class CustomersControllerTest {
         mockCustomer.setId(34L);
         when(this.customersRepository.findOne(34L)).thenReturn(mockCustomer);
 
-        this.mockMvc.perform(get("/customers/34"))
+        this.mockMvc.perform(RestDocumentationRequestBuilders.get("/customers/{customerId}", "34"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(34));
+                .andExpect(jsonPath("$.id").value(34))
+        .andDo(document("shouldGetOneCustomer",
+                pathParameters(
+                        parameterWithName("customerId").description("The id of the customer to retrieve")
+                ),
+                responseFields(this.getCustomerFieldDescriptor())));
     }
 
     private FieldDescriptor[] getCustomerFieldDescriptor() {
