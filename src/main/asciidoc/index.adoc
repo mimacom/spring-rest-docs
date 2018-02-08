@@ -1,0 +1,53 @@
+= Empezando con Spring REST Docs
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toc-title: Index
+:toclevels: 4
+:sectlinks:
+
+== Customers API
+
+Documentación de la API Customers generada con Spring REST Docs a partir de tests unitarios.
+
+.Ejemplo de petición con curl
+include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
+.Respuesta HTTP
+include::{snippets}/shouldCreateCustomer/http-response.adoc[]
+.Campos de entrada
+include::{snippets}/shouldCreateCustomer/request-fields.adoc[]
+.Campos de salida
+include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
+
+
+=== POST /customers
+
+.Ejemplo de petición con curl
+include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
+.Respuesta HTTP
+include::{snippets}/shouldCreateCustomer/http-response.adoc[]
+.Campos de entrada
+include::{snippets}/shouldCreateCustomer/request-fields.adoc[]
+.Campos de salida
+include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
+
+=== GET /customer/{customerId}
+
+
+.Ejemplo de petición con curl
+include::{snippets}/shouldGetOneCustomer/curl-request.adoc[]
+.Respuesta HTTP
+include::{snippets}/shouldGetOneCustomer/http-response.adoc[]
+.Parámetros de la petición
+include::{snippets}/shouldGetOneCustomer/path-parameters.adoc[]
+.Campos de salida
+include::{snippets}/shouldGetOneCustomer/response-fields.adoc[]
+
+
+= Documentación auto generada
+
+include::{snippets}/customers-controller-test/test-create-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-get-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-update/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-find-all/auto-section.adoc[]

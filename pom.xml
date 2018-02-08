@@ -58,7 +58,7 @@
         <dependency>
             <groupId>capital.scalable</groupId>
             <artifactId>spring-auto-restdocs-core</artifactId>
-            <version>1.0.10</version>
+            <version>1.0.11</version>
             <scope>test</scope>
         </dependency>
 
@@ -85,7 +85,6 @@
                             <backend>html</backend>
                             <doctype>book</doctype>
                             <sourceHighlighter>highlightjs</sourceHighlighter>
-                            <sourceDirectory>src/docs/asciidoc</sourceDirectory>
                             <attributes>
                                 <snippets>${project.build.directory}/generated-snippets</snippets>
                             </attributes>
@@ -97,12 +96,10 @@
                     <dependency>
                         <groupId>org.springframework.restdocs</groupId>
                         <artifactId>spring-restdocs-asciidoctor</artifactId>
-                        <version>${spring-restdocs.version}</version>
+                        <version>2.0.0.RELEASE</version>
                     </dependency>
                 </dependencies>
             </plugin>
-
-
 
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -155,7 +152,7 @@
                             <docletArtifact>
                                 <groupId>capital.scalable</groupId>
                                 <artifactId>spring-auto-restdocs-json-doclet</artifactId>
-                                <version>1.0.10</version>
+                                <version>1.0.11</version>
                             </docletArtifact>
                             <destDir>generated-javadoc-json</destDir>
                             <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
@@ -166,100 +163,6 @@
                 </executions>
             </plugin>
 
-
-            <plugin>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <id>generate-docs</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>html</backend>
-                            <doctype>book</doctype>
-                            <sourceHighlighter>highlightjs</sourceHighlighter>
-                            <attributes>
-                                <snippets>${project.build.directory}/generated-snippets</snippets>
-                            </attributes>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework.restdocs</groupId>
-                        <artifactId>spring-restdocs-asciidoctor</artifactId>
-                        <version>1.2.3.RELEASE</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-
-
-
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-index-public</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.outputDirectory}/public</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/generated-docs</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                    <systemPropertyVariables>
-                        <org.springframework.restdocs.outputDir>
-                            ${project.build.directory}/generated-snippets
-                        </org.springframework.restdocs.outputDir>
-                        <org.springframework.restdocs.javadocJsonDir>
-                            ${project.build.directory}/generated-javadoc-json
-                        </org.springframework.restdocs.javadocJsonDir>
-                    </systemPropertyVariables>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>generate-javadoc-json</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>javadoc-no-fork</goal>
-                        </goals>
-                        <configuration>
-                            <doclet>capital.scalable.restdocs.jsondoclet.ExtractDocumentationAsJsonDoclet</doclet>
-                            <docletArtifact>
-                                <groupId>capital.scalable</groupId>
-                                <artifactId>spring-auto-restdocs-json-doclet</artifactId>
-                                <version>1.0.10</version>
-                            </docletArtifact>
-                            <destDir>generated-javadoc-json</destDir>
-                            <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
-                            <useStandardDocletOptions>false</useStandardDocletOptions>
-                            <show>package</show>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
