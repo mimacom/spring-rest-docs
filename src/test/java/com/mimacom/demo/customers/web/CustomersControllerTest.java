@@ -41,7 +41,7 @@ public class CustomersControllerTest {
     private CustomersRepository customersRepository;
 
     @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("build/generated-snippets");
+    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
 
     @Autowired
     private WebApplicationContext context;

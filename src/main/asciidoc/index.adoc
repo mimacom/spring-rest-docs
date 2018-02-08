@@ -17,9 +17,5 @@ include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
 include::{snippets}/shouldCreateCustomer/http-response.adoc[]
 .Campos de entrada
 include::{snippets}/shouldCreateCustomer/request-fields.adoc[]
-.Ejemplo de petición
-include::{snippets}/shouldCreateCustomer/request-body.adoc[]
 .Campos de salida
 include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
-.Ejemplo de respuesta
-include::{snippets}/shouldCreateCustomer/response-body.adoc[]
