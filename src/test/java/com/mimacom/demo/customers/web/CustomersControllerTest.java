@@ -1,5 +1,8 @@
 package com.mimacom.demo.customers.web;
 
+import capital.scalable.restdocs.AutoDocumentation;
+import capital.scalable.restdocs.jackson.JacksonResultHandlers;
+import capital.scalable.restdocs.response.ResponseModifyingPreprocessors;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mimacom.demo.customers.domain.Customer;
 import com.mimacom.demo.customers.domain.Gender;
@@ -13,7 +16,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.JUnitRestDocumentation;
+import org.springframework.restdocs.cli.CliDocumentation;
+import org.springframework.restdocs.http.HttpDocumentation;
+import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
+import org.springframework.restdocs.operation.preprocess.Preprocessors;
 import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -50,11 +57,33 @@ public class CustomersControllerTest {
 
     @Autowired
     private WebApplicationContext context;
-
     @Before
-    public void setUp() {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-                .apply(documentationConfiguration(this.restDocumentation))
+    public void setUp() throws Exception {
+        this.mockMvc = MockMvcBuilders
+                .webAppContextSetup(context)
+                .alwaysDo(JacksonResultHandlers.prepareJackson(objectMapper))
+                .alwaysDo(MockMvcRestDocumentation.document("{class-name}/{method-name}",
+                        Preprocessors.preprocessRequest(),
+                        Preprocessors.preprocessResponse(
+                                ResponseModifyingPreprocessors.replaceBinaryContent(),
+                                ResponseModifyingPreprocessors.limitJsonArrayLength(objectMapper),
+                                Preprocessors.prettyPrint())))
+                .apply(MockMvcRestDocumentation.documentationConfiguration(restDocumentation)
+                        .uris()
+                        .withScheme("http")
+                        .withHost("localhost")
+                        .withPort(8080)
+                        .and().snippets()
+                        .withDefaults(CliDocumentation.curlRequest(),
+                                HttpDocumentation.httpRequest(),
+                                HttpDocumentation.httpResponse(),
+                                AutoDocumentation.requestFields(),
+                                AutoDocumentation.responseFields(),
+                                AutoDocumentation.pathParameters(),
+                                AutoDocumentation.requestParameters(),
+                                AutoDocumentation.description(),
+                                AutoDocumentation.methodAndPath(),
+                                AutoDocumentation.section()))
                 .build();
     }
 
