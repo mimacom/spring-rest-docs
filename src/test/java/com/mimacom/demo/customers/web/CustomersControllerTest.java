@@ -103,7 +103,7 @@ public class CustomersControllerTest {
 
         Customer customer = new Customer();
         customer.setAge(23);
-        customer.setFirstName("Liam");
+        customer.setFirstName("Marionni");
         customer.setGender(Gender.MALE);
         customer.setPhoneNumber("1119992");
 
