@@ -2,7 +2,7 @@
 
 The goal of this project is to demonstrate how to document an API implemented with Spring Framework using [Spring REST Docs](https://projects.spring.io/spring-restdocs/).
 
-## How it works?
+## How does it works?
 
 The project is built with `gradle` so in order to generate the documentation, just run:
 
