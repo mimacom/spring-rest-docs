@@ -20,7 +20,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: "io.spring.dependency-management"
 apply plugin: 'maven-publish'
 
-group = 'com.caixabank.absis'
+group = 'com.mimacom.demo.customers'
 version = '1.0.0-RELEASE'
 sourceCompatibility = 1.8
 
