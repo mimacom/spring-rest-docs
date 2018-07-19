@@ -1,3 +1,6 @@
+# Customers application
+
+This a sample and simple Spring Boot application to show how we can document our Rest API using Spring Rest Docs & Spring Auto Rest Docs.
 
 > mvn clean package
 
