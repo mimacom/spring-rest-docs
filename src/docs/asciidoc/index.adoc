@@ -1,51 +1,145 @@
+= Empezando con Spring REST Docs
 = Getting started with Spring REST Docs
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
-:toc: left
-:toc-title: Index
-:toclevels: 4
-:sectlinks:
 
-This is the documentation of the resource Customers API.
 
-== POST /customers
+== Customers API
 
-.Request sample with curl
-include::{snippets}/create-customer/curl-request.adoc[]
-.HTTP response
-include::{snippets}/create-customer/http-response.adoc[]
-.Response sample
-include::{snippets}/create-customer/response-body.adoc[]
-.Input fields
-include::{snippets}/create-customer/request-fields.adoc[]
-.Output fields
-include::{snippets}/create-customer/response-fields.adoc[]
-.Path parameters
-include::{snippets}/create-customer/path-parameters.adoc[]
+Documentación de la API Customers generada con Spring REST Docs a partir de tests unitarios.
 
-== GET /customers
+.Ejemplo de petición con curl
+include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
+.Respuesta HTTP
+include::{snippets}/shouldCreateCustomer/http-response.adoc[]
+.Campos de entrada
+include::{snippets}/shouldCreateCustomer/request-fields.adoc[]
+.Campos de salida
+include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
 
-.Request sample with curl
-include::{snippets}/find-all/curl-request.adoc[]
-.HTTP response
-include::{snippets}/find-all/http-response.adoc[]
-.Response sample
-include::{snippets}/find-all/response-body.adoc[]
+Customers API documentation generated from unit tests with Spring REST Docs.
+
+=== POST /customers
+
+.Ejemplo de petición con curl
+.curl sample request
+include::{snippets}/shouldCreateCustomer/curl-request.adoc[]
+.Respuesta HTTP
+.HTTP Response
+include::{snippets}/shouldCreateCustomer/http-response.adoc[]
+.Campos de entrada
+.Input
+include::{snippets}/shouldCreateCustomer/request-fields.adoc[]
+.Campos de salida
+.Output
+include::{snippets}/shouldCreateCustomer/response-fields.adoc[]
+
+=== GET /customer/{customerId}
+
+
+.Ejemplo de petición con curl
+.curl sample request
+include::{snippets}/shouldGetOneCustomer/curl-request.adoc[]
+.Respuesta HTTP
+.HTTP Response
+include::{snippets}/shouldGetOneCustomer/http-response.adoc[]
+.Parámetros de la petición
 .Request parameters
-include::{snippets}/find-all/request-parameters.adoc[]
-.Output fields
-include::{snippets}/find-all/response-fields.adoc[]
+include::{snippets}/shouldGetOneCustomer/path-parameters.adoc[]
+.Campos de salida
+.Output
+include::{snippets}/shouldGetOneCustomer/response-fields.adoc[]
 
-== GET /customers/{customerId}
 
-.Request sample with curl
-include::{snippets}/get-customer/curl-request.adoc[]
-.HTTP response
-include::{snippets}/get-customer/http-response.adoc[]
-.Response sample
-include::{snippets}/get-customer/response-body.adoc[]
-.Path parameters
-include::{snippets}/get-customer/path-parameters.adoc[]
-.Output fields
-include::{snippets}/get-customer/response-fields.adoc[]
+= Documentación auto generada
+= Generated documentation
+
+include::{snippets}/customers-controller-auto-docs-test/create-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-auto-docs-test/test-find-all/auto-section.adoc[]
+include::{snippets}/customers-controller-auto-docs-test/test-find-one/auto-section.adoc[]
+include::{snippets}/customers-controller-auto-docs-test/test-update/auto-section.adoc[]
+
+
+[[overview-pagination]]
+=== Pagination
+
+Spring pagination facilities offer following request parameters:
+
+.Request parameters
+|===
+| Path | Type | Optional | Description
+
+| page
+| Integer
+| false
+| Page you want to retrieve, 0 indexed and defaults to 0.
+
+| size
+| Integer
+| false
+| Size of the page you want to retrieve, defaults to 20.
+
+| sort
+| String
+| false
+| Properties that should be sorted by in the format `property,property(,ASC\|DESC)`.
+Default sort direction is ascending. Use multiple sort parameters if you want to
+switch directions, e.g. `?sort=firstname&sort=lastname,asc`.
+|===
+
+Pagination response has following structure:
+
+.Response structure
+|===
+| Path | Type | Optional | Description
+
+include::{snippets}/customers-controller-test/test-create-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-get-one-customer/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-update/auto-section.adoc[]
+include::{snippets}/customers-controller-test/test-find-all/auto-section.adoc[]
+| content
+| Array[Object]
+| false
+| Actual items.
+
+| totalElements
+| Integer
+| false
+| Total count.
+
+| totalPages
+| Integer
+| false
+| Total pages with current page size.
+
+| last
+| Boolean
+| false
+| If this page is the last one.
+
+| numberOfElements
+| Integer
+| false
+| Actual size of content array (number of items).
+
+| first
+| Boolean
+| false
+| If this page is the first one.
+
+| sort
+| Object
+| true
+| Sort information object.
+
+| size
+| Integer
+| false
+| Requested size of the page.
+
+| number
+| Integer
+| false
+| Page number.
+|===
