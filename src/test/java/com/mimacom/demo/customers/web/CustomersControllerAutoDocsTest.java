@@ -91,9 +91,9 @@ class CustomersControllerAutoDocsTest {
 
         when(this.customersRepository.save(any(Customer.class))).then((Answer<Customer>) invocationOnMock -> {
             if (invocationOnMock.getArguments().length > 0 && invocationOnMock.getArguments()[0] instanceof Customer) {
-                Customer customer1 = (Customer) invocationOnMock.getArguments()[0];
-                customer1.setId(34L);
-                return customer1;
+                Customer mockCustomer = (Customer) invocationOnMock.getArguments()[0];
+                mockCustomer.setId(34L);
+                return mockCustomer;
             }
             return null;
         });
