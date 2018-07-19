@@ -426,19 +426,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Getting started with Spring REST Docs</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Index</div>
+<ul class="sectlevel1">
+<li><a href="#_customers_api">Customers API</a>
+<ul class="sectlevel2">
+<li><a href="#_post_customers">POST /customers</a></li>
+<li><a href="#_get_customer_customerid">GET /customer/{customerId}</a></li>
+</ul>
+</li>
+<li><a href="#_generated_documentation">Generated documentation</a>
+<ul class="sectlevel2">
+<li><a href="#resources-customers-controller-auto-docs-test-create-customer">Create</a>
+<ul class="sectlevel3">
+<li><a href="#_path_parameters">Path parameters</a></li>
+<li><a href="#_query_parameters">Query parameters</a></li>
+<li><a href="#_request_fields">Request fields</a></li>
+<li><a href="#_response_fields">Response fields</a></li>
+<li><a href="#_example_request">Example request</a></li>
+<li><a href="#_example_response">Example response</a></li>
+</ul>
+</li>
+<li><a href="#resources-customers-controller-auto-docs-test-test-find-all">Find All</a>
+<ul class="sectlevel3">
+<li><a href="#_path_parameters_2">Path parameters</a></li>
+<li><a href="#_query_parameters_2">Query parameters</a></li>
+<li><a href="#_request_fields_2">Request fields</a></li>
+<li><a href="#_response_fields_2">Response fields</a></li>
+<li><a href="#_example_request_2">Example request</a></li>
+<li><a href="#_example_response_2">Example response</a></li>
+</ul>
+</li>
+<li><a href="#resources-customers-controller-auto-docs-test-test-find-one">Find One</a>
+<ul class="sectlevel3">
+<li><a href="#_path_parameters_3">Path parameters</a></li>
+<li><a href="#_query_parameters_3">Query parameters</a></li>
+<li><a href="#_request_fields_3">Request fields</a></li>
+<li><a href="#_response_fields_3">Response fields</a></li>
+<li><a href="#_example_request_3">Example request</a></li>
+<li><a href="#_example_response_3">Example response</a></li>
+</ul>
+</li>
+<li><a href="#resources-customers-controller-auto-docs-test-test-update">Update</a>
+<ul class="sectlevel3">
+<li><a href="#_path_parameters_4">Path parameters</a></li>
+<li><a href="#_query_parameters_4">Query parameters</a></li>
+<li><a href="#_request_fields_4">Request fields</a></li>
+<li><a href="#_response_fields_4">Response fields</a></li>
+<li><a href="#_example_request_4">Example request</a></li>
+<li><a href="#_example_response_4">Example response</a></li>
+</ul>
+</li>
+<li><a href="#overview-pagination">Pagination</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_customers_api">Customers API</h2>
+<h2 id="_customers_api"><a class="link" href="#_customers_api">Customers API</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Customers API documentation generated from unit tests with Spring REST Docs.</p>
 </div>
 <div class="sect2">
-<h3 id="_post_customers">POST /customers</h3>
+<h3 id="_post_customers"><a class="link" href="#_post_customers">POST /customers</a></h3>
 <div class="listingblock">
 <div class="title">curl sample request</div>
 <div class="content">
@@ -553,7 +609,7 @@ Content-Length: 95
 </table>
 </div>
 <div class="sect2">
-<h3 id="_get_customer_customerid">GET /customer/{customerId}</h3>
+<h3 id="_get_customer_customerid"><a class="link" href="#_get_customer_customerid">GET /customer/{customerId}</a></h3>
 <div class="listingblock">
 <div class="title">curl sample request</div>
 <div class="content">
@@ -639,9 +695,9 @@ Content-Length: 86
 </div>
 </div>
 </div>
-<h1 id="_generated_documentation" class="sect0">Generated documentation</h1>
+<h1 id="_generated_documentation" class="sect0"><a class="link" href="#_generated_documentation">Generated documentation</a></h1>
 <div class="sect2">
-<h3 id="resources-customers-controller-auto-docs-test-create-customer">Create</h3>
+<h3 id="resources-customers-controller-auto-docs-test-create-customer"><a class="link" href="#resources-customers-controller-auto-docs-test-create-customer">Create</a></h3>
 <div class="paragraph">
 <p><code>POST /customers/{salesRepId}</code></p>
 </div>
@@ -649,7 +705,7 @@ Content-Length: 86
 <p>Creates a new customer.</p>
 </div>
 <div class="sect3">
-<h4 id="_path_parameters">Path parameters</h4>
+<h4 id="_path_parameters"><a class="link" href="#_path_parameters">Path parameters</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -676,13 +732,13 @@ Content-Length: 86
 </table>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters">Query parameters</h4>
+<h4 id="_query_parameters"><a class="link" href="#_query_parameters">Query parameters</a></h4>
 <div class="paragraph">
 <p>No parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_fields">Request fields</h4>
+<h4 id="_request_fields"><a class="link" href="#_request_fields">Request fields</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -740,7 +796,7 @@ Content-Length: 86
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_fields">Response fields</h4>
+<h4 id="_response_fields"><a class="link" href="#_response_fields">Response fields</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -798,7 +854,7 @@ Content-Length: 86
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_request">Example request</h4>
+<h4 id="_example_request"><a class="link" href="#_example_request">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://demo.mimacom.com:443/customers/330' -i -X POST \
@@ -815,7 +871,7 @@ Content-Length: 86
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response">Example response</h4>
+<h4 id="_example_response"><a class="link" href="#_example_response">Example response</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
@@ -835,7 +891,7 @@ Content-Length: 124
 </div>
 </div>
 <div class="sect2">
-<h3 id="resources-customers-controller-auto-docs-test-test-find-all">Find All</h3>
+<h3 id="resources-customers-controller-auto-docs-test-test-find-all"><a class="link" href="#resources-customers-controller-auto-docs-test-test-find-all">Find All</a></h3>
 <div class="paragraph">
 <p><code>GET /customers</code></p>
 </div>
@@ -843,25 +899,25 @@ Content-Length: 124
 <p>Retrieves all existing customers.</p>
 </div>
 <div class="sect3">
-<h4 id="_path_parameters_2">Path parameters</h4>
+<h4 id="_path_parameters_2"><a class="link" href="#_path_parameters_2">Path parameters</a></h4>
 <div class="paragraph">
 <p>No parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters_2">Query parameters</h4>
+<h4 id="_query_parameters_2"><a class="link" href="#_query_parameters_2">Query parameters</a></h4>
 <div class="paragraph">
 <p>Supports standard <a href="#overview-pagination">paging</a> query parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_fields_2">Request fields</h4>
+<h4 id="_request_fields_2"><a class="link" href="#_request_fields_2">Request fields</a></h4>
 <div class="paragraph">
 <p>No request body.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_fields_2">Response fields</h4>
+<h4 id="_response_fields_2"><a class="link" href="#_response_fields_2">Response fields</a></h4>
 <div class="paragraph">
 <p>Standard <a href="#overview-pagination">paging</a> response where <code>content</code> field is list of following objects:</p>
 </div>
@@ -922,7 +978,7 @@ Content-Length: 124
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_request_2">Example request</h4>
+<h4 id="_example_request_2"><a class="link" href="#_example_request_2">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://demo.mimacom.com:443/customers?page=1&amp;size=15' -i -X GET</code></pre>
@@ -930,7 +986,7 @@ Content-Length: 124
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response_2">Example response</h4>
+<h4 id="_example_response_2"><a class="link" href="#_example_response_2">Example response</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
@@ -948,23 +1004,23 @@ Content-Length: 378
   } ],
   "pageable" : "INSTANCE",
   "last" : true,
-  "totalElements" : 1,
   "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 0,
   "number" : 0,
   "numberOfElements" : 1,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true
-  }
+  },
+  "first" : true
 }</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="resources-customers-controller-auto-docs-test-test-find-one">Find One</h3>
+<h3 id="resources-customers-controller-auto-docs-test-test-find-one"><a class="link" href="#resources-customers-controller-auto-docs-test-test-find-one">Find One</a></h3>
 <div class="paragraph">
 <p><code>GET /customers/{customerId}</code></p>
 </div>
@@ -972,7 +1028,7 @@ Content-Length: 378
 <p>Retrieves an existing customer.</p>
 </div>
 <div class="sect3">
-<h4 id="_path_parameters_3">Path parameters</h4>
+<h4 id="_path_parameters_3"><a class="link" href="#_path_parameters_3">Path parameters</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -999,19 +1055,19 @@ Content-Length: 378
 </table>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters_3">Query parameters</h4>
+<h4 id="_query_parameters_3"><a class="link" href="#_query_parameters_3">Query parameters</a></h4>
 <div class="paragraph">
 <p>No parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_fields_3">Request fields</h4>
+<h4 id="_request_fields_3"><a class="link" href="#_request_fields_3">Request fields</a></h4>
 <div class="paragraph">
 <p>No request body.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_fields_3">Response fields</h4>
+<h4 id="_response_fields_3"><a class="link" href="#_response_fields_3">Response fields</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -1069,7 +1125,7 @@ Content-Length: 378
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_request_3">Example request</h4>
+<h4 id="_example_request_3"><a class="link" href="#_example_request_3">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://demo.mimacom.com:443/customers/30' -i -X GET</code></pre>
@@ -1077,7 +1133,7 @@ Content-Length: 378
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response_3">Example response</h4>
+<h4 id="_example_response_3"><a class="link" href="#_example_response_3">Example response</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK</code></pre>
@@ -1086,7 +1142,7 @@ Content-Length: 378
 </div>
 </div>
 <div class="sect2">
-<h3 id="resources-customers-controller-auto-docs-test-test-update">Update</h3>
+<h3 id="resources-customers-controller-auto-docs-test-test-update"><a class="link" href="#resources-customers-controller-auto-docs-test-test-update">Update</a></h3>
 <div class="paragraph">
 <p><code>PUT /customers</code></p>
 </div>
@@ -1094,19 +1150,19 @@ Content-Length: 378
 <p>Updates an existing customer.</p>
 </div>
 <div class="sect3">
-<h4 id="_path_parameters_4">Path parameters</h4>
+<h4 id="_path_parameters_4"><a class="link" href="#_path_parameters_4">Path parameters</a></h4>
 <div class="paragraph">
 <p>No parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_query_parameters_4">Query parameters</h4>
+<h4 id="_query_parameters_4"><a class="link" href="#_query_parameters_4">Query parameters</a></h4>
 <div class="paragraph">
 <p>No parameters.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_fields_4">Request fields</h4>
+<h4 id="_request_fields_4"><a class="link" href="#_request_fields_4">Request fields</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -1164,7 +1220,7 @@ Content-Length: 378
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_fields_4">Response fields</h4>
+<h4 id="_response_fields_4"><a class="link" href="#_response_fields_4">Response fields</a></h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -1222,7 +1278,7 @@ Content-Length: 378
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_request_4">Example request</h4>
+<h4 id="_example_request_4"><a class="link" href="#_example_request_4">Example request</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://demo.mimacom.com:443/customers' -i -X PUT \
@@ -1239,7 +1295,7 @@ Content-Length: 378
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response_4">Example response</h4>
+<h4 id="_example_response_4"><a class="link" href="#_example_response_4">Example response</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK</code></pre>
@@ -1248,7 +1304,7 @@ Content-Length: 378
 </div>
 </div>
 <div class="sect2">
-<h3 id="overview-pagination">Pagination</h3>
+<h3 id="overview-pagination"><a class="link" href="#overview-pagination">Pagination</a></h3>
 <div class="paragraph">
 <p>Spring pagination facilities offer following request parameters:</p>
 </div>
@@ -1373,7 +1429,7 @@ Unresolved directive in index.adoc - include::/Users/sandra.gomez/dev/training/s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-07-19 17:12:55 CEST
+Last updated 2018-07-19 17:19:19 CEST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">

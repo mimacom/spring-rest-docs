@@ -2,7 +2,10 @@
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
-
+:toc: left
+:toc-title: Index
+:toclevels: 4
+:sectlinks:
 
 == Customers API
 
