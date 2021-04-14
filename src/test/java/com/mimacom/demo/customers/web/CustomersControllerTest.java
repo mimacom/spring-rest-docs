@@ -4,9 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mimacom.demo.customers.domain.Customer;
 import com.mimacom.demo.customers.domain.Gender;
 import com.mimacom.demo.customers.repository.CustomersRepository;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -16,7 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.FieldDescriptor;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
@@ -31,7 +28,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(CustomersController.class)
 @AutoConfigureRestDocs
 public class CustomersControllerTest {
@@ -44,9 +40,6 @@ public class CustomersControllerTest {
 
     @MockBean
     private CustomersRepository customersRepository;
-
-    @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
 
     @Test
     public void testCreateOneCustomer() throws Exception {
