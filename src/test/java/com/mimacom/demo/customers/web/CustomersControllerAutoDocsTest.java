@@ -99,7 +99,7 @@ class CustomersControllerAutoDocsTest {
         });
 
         this.mockMvc.perform(RestDocumentationRequestBuilders.post("/customers/{salesRepId}", 330).content(this.objectMapper.writeValueAsString(customer))
-                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.firstName").value("Liam"))
                 .andExpect(jsonPath("$.lastName").isEmpty())
@@ -121,7 +121,7 @@ class CustomersControllerAutoDocsTest {
 
         this.mockMvc.perform(put("/customers")
                 .content(this.objectMapper.writeValueAsString(customer))
-                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
